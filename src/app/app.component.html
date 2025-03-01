@@ -1,24 +1,37 @@
-<div class="envlope-wrapper">
-  <div id="envelope" [ngClass]="{'open': isOpen, 'close': !isOpen}">
-    <div class="front flap"></div>
-    <div class="front pocket"></div>
-    <div class="letter">
-      <div class="words line1">Para: Jhasury Bejarano</div>
-      <br>
-      <div class="words line2">Wenas Jhasury xd </div>
-      <div>Últimamente he sentido que algo cambió entre nosotros, y sinceramente, no quiero presionarte, solo entenderte.</div>
-      <div>Valoro mucho nuestra conexión y el tiempo que hemos compartido, y quiero que sepas que estaré aquí si quieres hablar o si hay algo en lo que pueda apoyarte.</div>
-      <div>No busco una respuesta inmediata, solo quiero que sepas que me importas y que respeto tus tiempos y sentimientos xd</div>
-    </div>
-    <div class="hearts">
-      <div class="heart a1"></div>
-      <div class="heart a2"></div>
-      <div class="heart a3"></div>
+<div *ngIf="!this.isChanged">
+  <div class="envlope-wrapper">
+    <div id="envelope" [ngClass]="{ open: isOpen, close: !isOpen }">
+      <div class="front flap"></div>
+      <div class="front pocket"></div>
+      <div class="letter">
+        <div class="words line1">Para: Jhasury Bejarano</div>
+        <br />
+        <div class="words line2">Wenas Jhasury xd</div>
+        <div>
+          Últimamente he sentido que algo cambió entre nosotros, y sinceramente,
+          no quiero presionarte, solo entenderte.
+        </div>
+        <div>
+          Valoro mucho nuestra conexión y el tiempo que hemos compartido, y
+          quiero que sepas que estaré aquí si quieres hablar o si hay algo en lo
+          que pueda apoyarte.
+        </div>
+        <div>
+          No busco una respuesta inmediata, solo quiero que sepas que me
+          importas y que respeto tus tiempos y sentimientos xd
+        </div>
+      </div>
+      <div class="hearts">
+        <div class="heart a1"></div>
+        <div class="heart a2"></div>
+        <div class="heart a3"></div>
+      </div>
     </div>
   </div>
+  <div class="reset">
+    <button (click)="this.open()" id="open">Open</button>
+    <button (click)="this.close()" id="reset">Close</button>
+  </div>
 </div>
-<div class="reset">
-  <button (click)="this.open()" id="open">Open</button>
-  <button (click)="this.close()" id="reset">Close</button>
-</div>
+<app-letter *ngIf="this.isChanged"></app-letter>
 <router-outlet />
