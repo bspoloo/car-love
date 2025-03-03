@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LetterComponent } from "./components/letter/letter.component";
 
+// this is the principal component
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CommonModule, LetterComponent],
